@@ -53,6 +53,13 @@ if result.fetchone()[0] == 0: exit(1)
     echo "🔧 Initializing Superset..."
     superset init
     
+    echo "📊 Loading example datasets..."
+    if superset load_examples 2>/dev/null; then
+        echo "✅ Example datasets loaded successfully!"
+    else
+        echo "⚠️  Failed to load examples (might be due to memory constraints)"
+    fi
+    
     echo "✅ Database initialized!"
 else
     echo "✅ Database already initialized!"
