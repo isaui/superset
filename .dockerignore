@@ -1,0 +1,63 @@
+# Environment variables and secrets
+.env
+*.env
+*.secret
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Superset home directory (will be created in the container)
+superset_home/
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Docker files (except Dockerfile and entrypoint)
+docker-compose*
+.dockerignore
+
+# Other unnecessary files
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
