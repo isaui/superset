@@ -18,7 +18,7 @@ jobs:
           curl -X POST https://kubernetes-deployment-platform-main.52bda5.app.isacitra.com/api/v1/deployments/git \
             -H "Content-Type: application/json" \
             -d '{
-              "serviceId": "cd5d073a-0447-4c8c-9f21-7e2d4f6aff35",
+              "serviceId": "36ae8d32-d5f2-4e92-b5ed-77abb37ee854",
               "apiKey": "${{ secrets.KUBESA_API_KEY }}",
               "commitId": "${{ github.sha }}",
               "commitMessage": "${{ github.event.head_commit.message }}"
