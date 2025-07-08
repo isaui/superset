@@ -41,7 +41,7 @@ if result.fetchone()[0] == 0: exit(1)
 " 2>/dev/null; then
     echo "📦 Initializing Superset database..."
     superset db upgrade
-    
+
     echo "👤 Creating admin user..."
     superset fab create-admin \
         --username admin \
@@ -49,17 +49,10 @@ if result.fetchone()[0] == 0: exit(1)
         --lastname User \
         --email admin@superset.com \
         --password admin
-    
+
     echo "🔧 Initializing Superset..."
     superset init
-    
-    echo "📊 Loading example datasets..."
-    if superset load_examples 2>/dev/null; then
-        echo "✅ Example datasets loaded successfully!"
-    else
-        echo "⚠️  Failed to load examples (might be due to memory constraints)"
-    fi
-    
+
     echo "✅ Database initialized!"
 else
     echo "✅ Database already initialized!"
