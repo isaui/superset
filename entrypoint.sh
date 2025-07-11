@@ -64,7 +64,6 @@ exec gunicorn \
   --timeout 90 \
   --workers 8 \
   --threads 4 \
-  --worker-class gevent \
   --worker-connections 1000 \
   --keep-alive 5 \
   "superset.app:create_app()"
