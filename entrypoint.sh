@@ -59,4 +59,12 @@ else
 fi
 
 echo "🌐 Starting Superset server..."
-exec gunicorn --bind 0.0.0.0:8088 --timeout 120 --workers 2 "superset.app:create_app()"
+exec gunicorn \
+  --bind 0.0.0.0:8088 \
+  --timeout 90 \
+  --workers 8 \
+  --threads 4 \
+  --worker-class gevent \
+  --worker-connections 1000 \
+  --keep-alive 5 \
+  "superset.app:create_app()"
